@@ -29,6 +29,15 @@ pipeline {
             }
         }
 
+        stage("Sonarqube Analysis") {
+            steps {
+                withSonarQubeEnv('SonarQube-Server') {
+                    sh '''$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Blog-CICD \
+                    -Dsonar.projectKey=Blog-CICD'''
+                }
+            }
+        }
+
         stage('Quality Gate') {
             steps {
                 script {
@@ -36,11 +45,13 @@ pipeline {
                 }
             }
         }
+
         stage('Install Dependencies') {
             steps {
                 sh "npm install"
             }
         }
+        
         stage('TRIVY FS SCAN') {
             steps {
                 sh "trivy fs . > trivyfs.txt"
