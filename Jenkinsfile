@@ -8,7 +8,7 @@ pipeline {
 
     environment {
         SCANNER_HOME = tool 'sonar-scanner'
-        APP_NAME = "Reactjs-Blog"
+        APP_NAME = "reactjs-blog"
         RELEASE = "1.0.0"
         DOCKER_USER = "nikhil999999"
         DOCKER_PASS = 'dockerhub'
@@ -76,7 +76,7 @@ pipeline {
         stage ('Trivy Image Scan') {
             steps {
                 script {
-                    sh ('docker run -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy image nikhil999999/Reactjs-Blog:latest --no-progress --scanners vuln  --exit-code 0 --severity HIGH,CRITICAL --format table > trivyimage.txt')
+                    sh ('docker run -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy image nikhil999999/reactjs-blog:latest --no-progress --scanners vuln  --exit-code 0 --severity HIGH,CRITICAL --format table > trivyimage.txt')
                 }
             }
         }
