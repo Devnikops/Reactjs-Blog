@@ -26,7 +26,7 @@ pipeline {
 
         stage('Checkout from git') {
             steps {
-                git branch: 'main', url: 'https://github.com/Devnikops/Reactjs-Blog.git'
+                git branch: 'main', url: 'https://github.com/Devnikops/Reactjs-Blog'
             }
         }
 
