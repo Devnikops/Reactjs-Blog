@@ -94,7 +94,7 @@ pipeline {
         stage ('Trigger Reactjs-Blog CD Job') {
             steps {
                 script {
-                    sh "curl -v -k --user devopsuser:${JENKINS_API_TOKEN} -X POST -H 'cache-control: no-cache' -H 'content-type: application/x-www-form-urlencoded' --data 'IMAGE_TAG=${IMAGE_TAG}' 'ec2-13-200-154-111.ap-south-1.compute.amazonaws.com:8080/job/Blog-App-CD/buildWithParameters?token=gitops-token'"
+                    sh "curl -v -k --user devopsadmin:${JENKINS_API_TOKEN} -X POST -H 'cache-control: no-cache' -H 'content-type: application/x-www-form-urlencoded' --data 'IMAGE_TAG=${IMAGE_TAG}' 'ec2-13-200-154-111.ap-south-1.compute.amazonaws.com:8080/job/Blog-App-CD/buildWithParameters?token=gitops-token'"
                 }
             }
         }
