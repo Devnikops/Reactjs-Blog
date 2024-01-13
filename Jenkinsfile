@@ -8,7 +8,7 @@ pipeline {
 
     environment {
         SCANNER_HOME = tool 'sonar-scanner'
-        APP_NAME = "Reactjs-Blog"
+        APP_NAME = "reactjs-blog"
         RELEASE = "1.0.0"
         DOCKER_USER = "nikhil999999"
         DOCKER_PASS = 'dockerhub'
