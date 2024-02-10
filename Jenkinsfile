@@ -11,7 +11,7 @@ pipeline {
         APP_NAME = "reactjs-blog"
         RELEASE = "1.0.0"
         DOCKER_USER = "nikhil999999"
-        DOCKER_PASS = 'dockerhub'
+        DOCKER_PASS = 'docker'
         IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
        /* JENKINS_API_TOKEN = credentials('JENKINS_API_TOKEN') */
